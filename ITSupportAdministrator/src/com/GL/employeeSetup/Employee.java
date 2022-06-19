@@ -62,7 +62,8 @@ public class Employee {
         return sb.toString();
     }
 	
-	public static void showCredentialsMethod(String email, String password) {
+	public static void showCredentialsMethod(String firstName,String email, String password) {
+        System.out.println("Dear " + firstName + " the generated credentials are as follows-->");
 		System.out.println("Email--->" + email);
 		System.out.println("Password--->" + password);
 	}

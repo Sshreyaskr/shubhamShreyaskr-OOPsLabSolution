@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class EmployeeRunner {
 
-	private static String firstName = null;
-	private static String lastName = null;
+	
 
 	public static void main(String[] args) {
 
+		String firstName = null;
+		String lastName = null;
 		try (Scanner input = new Scanner(System.in)) {
 			char continueIteration;
 			int choice;
@@ -33,16 +34,16 @@ public class EmployeeRunner {
 
 				switch (choice) {
 				case 1:
-					Employee.showCredentialsMethod(emp.generateEmailAddress(1), emp.generateRandomPassword(10));
+					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(1), emp.generateRandomPassword(10));
 					break;
 				case 2:
-					Employee.showCredentialsMethod(emp.generateEmailAddress(2), emp.generateRandomPassword(10));
+					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(2), emp.generateRandomPassword(10));
 					break;
 				case 3:
-					Employee.showCredentialsMethod(emp.generateEmailAddress(3), emp.generateRandomPassword(10));
+					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(3), emp.generateRandomPassword(10));
 					break;
 				case 4:
-					Employee.showCredentialsMethod(emp.generateEmailAddress(4), emp.generateRandomPassword(10));
+					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(4), emp.generateRandomPassword(10));
 					break;
 				default:
 					System.out.println("Please choose the departments from (1-4)");
