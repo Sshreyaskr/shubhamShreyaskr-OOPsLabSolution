@@ -1,16 +1,20 @@
 package com.GL.credentialAssignment;
 
 import com.GL.employeeSetup.*;
+import com.GL.services.EmployeeCredentialGenerator;
+
 import java.util.Scanner;
 
 public class EmployeeRunner {
-
-	
 
 	public static void main(String[] args) {
 
 		String firstName = null;
 		String lastName = null;
+		String emailId=null;
+		String password=null;
+		EmployeeCredentialGenerator empCred=new EmployeeCredentialGenerator();
+		
 		try (Scanner input = new Scanner(System.in)) {
 			char continueIteration;
 			int choice;
@@ -22,10 +26,10 @@ public class EmployeeRunner {
 				System.out.println("Enter your last name");
 				lastName = input.next();
 
-				Employee emp = new Employee(firstName, lastName);
-
+				
+				Employee employee=new Employee(firstName, lastName);
+			
 				System.out.println("Please enter your department from the following: ");
-				System.out.println();
 				System.out.println("1. Technical");
 				System.out.println("2. Admin");
 				System.out.println("3. Human Resource");
@@ -34,16 +38,24 @@ public class EmployeeRunner {
 
 				switch (choice) {
 				case 1:
-					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(1), emp.generateRandomPassword(10));
+					     emailId=empCred.generateEmailAddress(choice,firstName,lastName);
+					     password=empCred.generateRandomPassword();
+					     EmployeeCredentialGenerator.showCredentialsMethod(firstName, emailId, password);
 					break;
 				case 2:
-					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(2), emp.generateRandomPassword(10));
+					 emailId=empCred.generateEmailAddress(choice,firstName,lastName);
+				     password=empCred.generateRandomPassword();
+				     EmployeeCredentialGenerator.showCredentialsMethod(firstName, emailId, password);
 					break;
 				case 3:
-					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(3), emp.generateRandomPassword(10));
+					 emailId=empCred.generateEmailAddress(choice,firstName,lastName);
+				     password=empCred.generateRandomPassword();
+				     EmployeeCredentialGenerator.showCredentialsMethod(firstName, emailId, password);
 					break;
 				case 4:
-					Employee.showCredentialsMethod(firstName,emp.generateEmailAddress(4), emp.generateRandomPassword(10));
+					 emailId=empCred.generateEmailAddress(choice,firstName,lastName);
+				     password=empCred.generateRandomPassword();
+				     EmployeeCredentialGenerator.showCredentialsMethod(firstName, emailId, password);
 					break;
 				default:
 					System.out.println("Please choose the departments from (1-4)");
